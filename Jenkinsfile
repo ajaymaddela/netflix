@@ -10,6 +10,7 @@ pipeline {
             steps{
                 git branch: 'main', url: 'https://github.com/santhoshgullapudi/jenkinsworkshop.git'
         }
+    }
         stage('Build docker image') {
             steps {
                 sh "docker image build -t santhoshgullapudi/jenkins1workshop:$BUILD_ID ."
