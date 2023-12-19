@@ -17,10 +17,10 @@ provider "azurerm" {
 
 terraform {
   backend "azurerm" {
-    storage_account_name = "idontknowlt"
-    container_name       = "tflock"
-    key                  = "workshopdec23.tfstate"
-    resource_group_name = "DefaultResourceGroup-EUS"
+    storage_account_name = "jenkinsdec23"
+    container_name       = "lock"
+    key                  = "sanu.tfstate"
+    resource_group_name = "sanu"
   }
 }
 
