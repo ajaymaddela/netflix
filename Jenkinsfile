@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Checkout from Git'){
             steps{
-                git branch: 'main', url: 'https://github.com/santhoshgullapudi/jenkinsworkshop.git'
+                git branch: 'main', url: 'https://github.com/ajaymaddela/netflix.git'
         }
     }
         stage('Build docker image') {
