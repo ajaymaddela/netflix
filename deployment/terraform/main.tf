@@ -15,14 +15,14 @@ provider "azurerm" {
   features {}
 }
 
-terraform {
-  backend "azurerm" {
-    storage_account_name = "jenkinsdec23"
-    container_name       = "lock"
-    key                  = "sanu.tfstate"
-    resource_group_name = "sanu"
-  }
-}
+#terraform {
+ # backend "azurerm" {
+  #  storage_account_name = "jenkinsdec23"
+   # container_name       = "lock"
+    #key                  = "sanu.tfstate"
+    #resource_group_name = "sanu"
+  #}
+#}
 
 resource "azurerm_resource_group" "example" {
   name     = "example-resources"
