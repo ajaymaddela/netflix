@@ -12,7 +12,11 @@ if ! command -v terraform &> /dev/null; then
 fi
 
 # Change to your Terraform directory
-cd deployment/terraform || display_error "Directory not found"
+TERRAFORM_DIR="deployment/terraform"
+if [ ! -d "$TERRAFORM_DIR" ]; then
+    display_error "Terraform directory not found: $TERRAFORM_DIR"
+fi
+cd "$TERRAFORM_DIR" || display_error "Failed to change to Terraform directory: $TERRAFORM_DIR"
 
 # Initialize Terraform
 terraform init || display_error "Failed to initialize Terraform"
