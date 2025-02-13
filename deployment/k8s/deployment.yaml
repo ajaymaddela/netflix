@@ -5,8 +5,7 @@ metadata:
   name: netflix-app
   labels:
     app: netflix-app
-  annotations:
-    service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing
+
 
 spec:
   replicas: 2
@@ -30,6 +29,8 @@ metadata:
   name: netflix-app
   labels:
     app: netflix-app
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing
 spec:
   type: LoadBalancer
   ports:
