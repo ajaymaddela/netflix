@@ -5,8 +5,6 @@ metadata:
   name: netflix-app
   labels:
     app: netflix-app
-
-
 spec:
   replicas: 2
   selector:
@@ -17,9 +15,12 @@ spec:
       labels:
         app: netflix-app
     spec:
+      imagePullSecrets:
+      - name: regcred
       containers:
       - name: netflix-app
         image: 684206014294.dkr.ecr.us-west-1.amazonaws.com/ajay:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
 ---
@@ -38,4 +39,3 @@ spec:
     targetPort: 80
   selector:
     app: netflix-app
-  
