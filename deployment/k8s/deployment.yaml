@@ -73,7 +73,7 @@ metadata:
   labels:
     app: netflix-app
 spec:
-  type: NodePort  # Changed from LoadBalancer to NodePort
+  type: ClusterIP  # Changed from LoadBalancer to NodePort
   ports:
   - port: 80
     targetPort: 80
@@ -93,7 +93,7 @@ metadata:
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
 spec:
   rules:
-  - host: ajaymaddela.online
+  - host: netflix.ajaymaddela.online
     http:
       paths:
       - path: /
